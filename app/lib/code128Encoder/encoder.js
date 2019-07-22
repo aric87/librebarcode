@@ -1,5 +1,4 @@
-define([
-], function(
+function libreEncoder(
 ){
     "use strict";
     /* global Map, Set */
@@ -479,4 +478,12 @@ define([
     return {
         encode: encode
     };
-});
+};
+$(document).ready(function(){
+    var textToEncode = $('.libre').text();
+    console.log("textToEncode "  & textToEncode);
+    var encoder = libreEncoder();
+    var outputText = encoder.encode(textToEncode)
+    console.log("outputText "  & outputText);
+    $('.libre').text(outputText);
+    });
